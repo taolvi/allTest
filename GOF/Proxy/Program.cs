@@ -1,9 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
+/*
+ * 代理模式
+ * 为其他对象提供一个代理以控制这个对象的访问
+ */
 namespace Gof
 {
     class Program

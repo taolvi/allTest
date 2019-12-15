@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
+/*
+ * 单例模式
+ * 懒汉式：需要时才会创建（注意线程安全）
+ * 饿汉式：程序启动便创建，无论是否需要。
+ */
 namespace GoF
 {
     class Program
@@ -12,7 +12,8 @@ namespace GoF
         {
         }
     }
-    // lazy
+
+    #region Lazy
     class SingletonLazy
     {
         private static SingletonLazy instance;
@@ -34,8 +35,10 @@ namespace GoF
             return instance;
         } 
     }
+    #endregion
 
-    public sealed class SingletonHungry // 阻值派生
+    #region Hungry
+    public sealed class SingletonHungry // 阻止派生
     {
         private static readonly SingletonHungry instance = new SingletonHungry();
         private SingletonHungry() { }
@@ -44,4 +47,5 @@ namespace GoF
             return instance;
         }
     }
+    #endregion
 }

@@ -1,8 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
+/*
+ * 状态模式
+ * 当一个对象的内在状态改变时允许改变其行为，
+ * 这个对象看起来像是改变了其类。
+ * 
+ * 例子中调用Request则设置为下一状态
+ */
 
 namespace GOF
 {
@@ -21,11 +25,12 @@ namespace GOF
         }
     }
 
+    // 抽象状态类
     abstract class State
     {
         public abstract void Handle(Context context);
     }
-
+    // 具体状态类
     class ConcreteStateA : State
     {
         public override void Handle(Context context)
@@ -40,7 +45,7 @@ namespace GOF
             context.State = new ConcreteStateA();
         }
     }
-
+    // 维护一个 具体状态类，通过改变它内部的状态类改变它的行为
     class Context
     {
         private State state;

@@ -1,10 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-// 模版方法模式
-namespace TemplateMethod
+
+/*
+ * 模版方法模式
+ * 定义一个操作中的算法的骨架，而将一些步骤延迟到子类中。模板方法使得子类
+ * 可以不改变一个算法的结构即可重定义该算法的某些特定步骤
+ */
+namespace GoF
 {
     class Program
     {
@@ -21,10 +22,14 @@ namespace TemplateMethod
         }
     }
 
+    // 抽象模板，定义一个算法实现的骨架，具体实现方法由子类决定
     abstract class AbstractClass
     {
-        protected abstract void PrimitiveOperation1();// 一些抽象行为，放到子类去实现
+        // 具体算法的内部细节，放到子类去实现
+        protected abstract void PrimitiveOperation1();
         protected abstract void PrimitiveOperation2();
+       
+        // 算法骨架
         public void TemplateMethod()
         {
             PrimitiveOperation1();
@@ -33,6 +38,7 @@ namespace TemplateMethod
         }
     }
 
+    // 具体子类的实现方法
     class ConcreteClassA : AbstractClass
     {
         protected override void PrimitiveOperation1()
