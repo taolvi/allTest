@@ -1,6 +1,10 @@
 ﻿using System;
 
-
+/*
+ * 命令模式
+ * 将一个请求封装为一个对象，从而使你可用不同的请求对客户进行参数化；
+ * 对请求排队或记录请求日志，以及支持可撤销的操作
+ */
 namespace GoF
 {
     class Program
@@ -17,6 +21,7 @@ namespace GoF
         }
     }
 
+    // 命令父类
     abstract class Command
     {
         protected Reciver reciver;
@@ -24,6 +29,7 @@ namespace GoF
         public abstract void Execute();
     }
 
+    // 具体的命令， 每个命令都有一个具体的执行者
     class ConcreteCommand : Command
     {
         public ConcreteCommand(Reciver reciver) : base(reciver) { }

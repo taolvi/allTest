@@ -1,9 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-// 原型模式
+
+/*
+ * 原型模式
+ * 用原型实例指定创建对象的种类，并且通过拷贝这些原型创建新的对象。
+ * 重点：实现Clone方法
+ */
 namespace GoF
 {
     class Program
@@ -18,7 +19,7 @@ namespace GoF
             Console.Read();
         }
     }
-    // 原型类
+    // 抽象原型类
     abstract class Prototype
     {
         private string id;
@@ -43,5 +44,4 @@ namespace GoF
             return (Prototype)this.MemberwiseClone();
         }
     }
-
 }

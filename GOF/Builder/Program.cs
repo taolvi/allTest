@@ -1,8 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
+/*
+ * 建造者模式
+ * 将一个复杂对象的构建与它的表示分离，使得同样的构建过程可以创建不同的表示。
+ * 
+ * 指挥者负责整体的把控，传给指挥者的builder负责具体细节的实现。builder不同，结果也不同。
+ */
 
 namespace GOF
 {

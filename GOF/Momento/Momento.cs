@@ -1,10 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-// don't fogert me
+/*
+ * 备忘录模式
+ * 在不破坏封装性的前提下，捕获一个对象的内部状态，并在该对象之外保存这个状态。
+ * 这样就可以将该对象恢复到原先保存的状态。
+ */
 namespace GoF
 {
     class Program
@@ -27,7 +27,12 @@ namespace GoF
             Console.Read();
         }
     }
-    // 发起人 Qriginator
+
+    /*
+     * 发起人 Qriginator
+     * 需要保存状态，返回一个保存当前状态的备忘录对象
+     * 也可以加载一个备忘录对象，从备忘录对象中恢复保存的状态
+     */
     class Originator
     {
         private string state; // 要记录的信息（可多个）
@@ -50,7 +55,8 @@ namespace GoF
         }
 
     }
-    // 备忘录 Momento
+
+    // 备忘录 Momento，记录发起人的状态
     class Momento
     {
         private string state;
@@ -64,7 +70,7 @@ namespace GoF
         }
     }
 
-    // 管理者 Caretaker
+    // 管理者 Caretaker，负责管理备忘录
     class Caretaker
     {
         private Momento momento;

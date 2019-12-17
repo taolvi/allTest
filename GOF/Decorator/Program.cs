@@ -1,8 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
+/*
+ * 装饰模式
+ * 动态的给一个对象添加一些额外的职责，就增加功能来说，装饰模式比
+ * 生成子类更灵活
+ * 
+ * 大家都实现Operation方法，外层装饰器保存内层的类，在外层Operation
+ * 方法合适的位置调用内层的Operation方法，实现增加新功能（装饰）
+ */
 
 namespace GoF
 {
@@ -33,6 +38,7 @@ namespace GoF
             Console.WriteLine("具体对象的操作");
         }
     }
+
     // 装饰类
     abstract class Decorator : Component
     {
@@ -50,6 +56,7 @@ namespace GoF
             }
         }
     }
+
     // 具体的装饰类
     class ConcreteDecoratorA : Decorator
     {

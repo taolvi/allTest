@@ -1,6 +1,10 @@
 ﻿using System;
 using System.Collections;
 
+/*
+ * 享元模式
+ * 运用共享技术有效的支持大量细粒度的对象。
+ */
 namespace GoF
 {
     class Program
@@ -52,7 +56,7 @@ namespace GoF
         public FlyweightFactory()
         {
             flyweights.Add("X", new ConcreteFlyweight());   // 初始化工厂类时先加入三个类
-            flyweights.Add("Y", new ConcreteFlyweight());
+            flyweights.Add("Y", new ConcreteFlyweight());   // 这三个类可以不同的需要共享的类
             flyweights.Add("Z", new ConcreteFlyweight());
         }
 

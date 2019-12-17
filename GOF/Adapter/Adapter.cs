@@ -1,8 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
+/*
+ * 适配器模式
+ * 将一个类的接口转换为客户希望的另外一个接口。Adapter模式使得
+ * 原本由于接口不兼容而不能一起工作的那些类可以一起工作。
+ */
 
 namespace GoF
 {

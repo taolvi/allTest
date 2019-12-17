@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
+/*
+ * 解释器模式
+ * 给定一个语言，定义它的文法的一种表示，并定义一个解释器，
+ * 这个解释器使用该表示来语言中的句子。
+ */
 namespace Interpreter
 {
     class Program
@@ -41,7 +43,7 @@ namespace Interpreter
         }
     }
 
-    // 抽象表达式
+    // 抽象 表达式
     abstract class AbstractExpression
     {
         // 抽象解释

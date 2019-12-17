@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
+/*
+ * 组合模式
+ * 将对象组合成树形结构以表示‘部分-整体’的层次结构。组合模式使得用户
+ * 对单个对象和组合对象的使用具有一致性。
+ */
 
 namespace GoF
 {
@@ -25,7 +28,7 @@ namespace GoF
         }
     }
 
-    // 
+    // 节点
     abstract class Component
     {
         protected string name;
@@ -39,7 +42,7 @@ namespace GoF
         public abstract void Display(int depth);
     }
 
-    // 叶子节点
+    // 叶子节点，不能添加节点
     class Leaf : Component
     {
         public Leaf(string name) : base(name) { }
@@ -57,6 +60,7 @@ namespace GoF
         }
     }
 
+    // 组合节点， 可以添加节点
     class Composite : Component
     {
         private List<Component> children = new List<Component>();

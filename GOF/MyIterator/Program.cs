@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
+/*
+ * 迭代器模式
+ * 提供一种方法顺序访问一个聚合对象中的各个元素，而又不
+ * 暴露该对象的内部表示
+ */
 namespace GoF
 {
     class Program
@@ -17,16 +19,13 @@ namespace GoF
             agg[3] = "DD";
 
             Iterator i = agg.CreateIterator();
-
             object o = i.First();
-
             while (!i.IsDone())
             {
                 Console.WriteLine((string)o);
                 o = i.Next();
             }
             Console.Read();
-
         }
     }
     // 迭代器抽象类
@@ -44,6 +43,10 @@ namespace GoF
         public abstract Iterator CreateIterator();
     }
 
+    /*
+     * 具体迭代器
+     * 包括：返回第一个元素，返回下一个元素，检查是否循环完，获取特定元素等方法
+     */
     public class ConcreteIterator : Iterator
     {
         private ConcreteAggregate agg;
@@ -74,9 +77,11 @@ namespace GoF
         {
             return agg[Count];
         }
-
     }
 
+    /*
+     * 使用该迭代器的对象
+     */
     public class ConcreteAggregate : Aggregate
     {
         private IList<object> items = new List<object>();

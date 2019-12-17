@@ -1,10 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-// 大话设计模式，就不能不换DB吗？
+/*
+ * 抽象工厂模式
+ * 提供一创建系列相关或相互依赖对象的接口，而无需指定他们具体的类。
+ * 
+ * 数据库更换
+ */
 namespace GoF
 {
     class Abstract_Factory
@@ -13,6 +14,7 @@ namespace GoF
         {
             User user = new User();
             Department dept = new Department();
+            // 需要替换为另外一个只需要修改这一句就行了
             // IFactory factory = new AccessFactory();
             IFactory factory = new SqlServerFactry();
 
@@ -29,8 +31,7 @@ namespace GoF
     }
 
     /******************数据库中的Department******************/
-    class Department
-    { }
+    class Department { }
 
     // 用于访问数据库中的Department
     interface IDepartment
@@ -70,8 +71,7 @@ namespace GoF
     /******************数据库中的Department end******************/
 
     /******************数据库中的 User ******************/
-    class User
-    { }
+    class User { }
 
     // 用于访问数据库中的Department
     interface IUser
